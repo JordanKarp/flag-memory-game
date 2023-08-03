@@ -1,0 +1,41 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.content {
+  padding: 10px;
+  background-color: rgb(71, 66, 60);
+  border-radius: 10px;
+}
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+}
+.playboard{
+  display: flex;
+  justify-content: center;
+}
+.card {
+  padding: 10px;
+  margin: 5px;
+  background-color: darkslategrey;
+}
+
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+
+#footer {
+  padding: 10px;
+  margin: 10px
+}
+
+#footer>p{
+  display: inline;
+}
