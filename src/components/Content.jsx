@@ -9,7 +9,7 @@ export default function Content() {
     const [highScore, setHighScore] = useState(0)
     const [chosenFlags, setChosenFlags] = useState([])
     const [displayMessage, setDisplayMessage] = useState(introText)
-    const [displayColor, setDisplayColor] = useState("white")
+    const [displayColor, setDisplayColor] = useState("rgb(71, 66, 60)")
     const [scoreColor, setScoreColor] = useState("white")
 
     useEffect(() => {
@@ -39,24 +39,24 @@ export default function Content() {
         if (chosenFlags.includes(val)) {
             resetScore()
             setChosenFlags([])
-            setDisplayColor("red")
+            setDisplayColor("rgb(136, 55, 55)")
             setDisplayMessage(`Sorry, ${val} already picked. Game over.`)
         } else {
             addPoint()
             setDisplayMessage(`Correct!`)
-            setDisplayColor("white")
+            setDisplayColor("rgb(71, 66, 60)")
             setChosenFlags(chosenFlags => [...chosenFlags, val]);
         }
     }
 
 
     return (
-        <div className="content">
+        <div className="content" style={{backgroundColor: displayColor}}>
             <div className="scoreboard">
                 <p>Score: {score}</p>
                 <p>High Score: <span style={{color: scoreColor}}>{highScore}</span></p>
             </div>
-            <p className="message" style={{color: displayColor}}>{displayMessage}</p>
+            <p className="message">{displayMessage}</p>
             <div className="playboard">
                 <Card countryCode={randomCountryCode()} click={handleClick} />
                 <Card countryCode={randomCountryCode()} click={handleClick}/>
