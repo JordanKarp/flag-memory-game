@@ -1,3 +1,6 @@
+import PropTypes from 'prop-types';
+
+
 export default function Card( {countryCode, click} ) {
     const returnCode = () => {
         console.log(countryCode)
@@ -10,4 +13,9 @@ export default function Card( {countryCode, click} ) {
             {/* <p className="code" id={countryCode}>{countryCode}</p> */}
         </button>
     )
+}
+
+Card.propTypes = {
+    countryCode: PropTypes.string,
+    click: PropTypes.func,
 }
